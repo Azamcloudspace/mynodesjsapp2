@@ -1,3 +1,2 @@
 #!/bin/bash
-cd /var/www/html
-npm start &
+systemctl start httpd
