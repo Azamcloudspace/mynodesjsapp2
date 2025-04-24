@@ -1,2 +1,2 @@
 #!/bin/bash
-systemctl stop httpd
+pkill node || echo "No node process running"
