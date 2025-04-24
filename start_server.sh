@@ -1,2 +1,3 @@
 #!/bin/bash
-systemctl start httpd
+cd /var/www/myapp
+npm start &
