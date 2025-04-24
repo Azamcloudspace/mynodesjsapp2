@@ -1,4 +1,34 @@
-<!DOCTYPE html>
+# Create a simple Node.js app with HTML that displays a name and profession with background styling
+
+node_app_files = {
+    "app.js": """const express = require('express');
+const app = express();
+const port = 3000;
+
+app.use(express.static('public'));
+
+app.get('/', (req, res) => {
+  res.sendFile(__dirname + '/public/index.html');
+});
+
+app.listen(port, () => {
+  console.log(`App running at http://localhost:${port}`);
+});
+""",
+    "package.json": """{
+  "name": "chiazam-devops-app",
+  "version": "1.0.0",
+  "description": "A simple Node.js app for Chiazam Iheme",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
+""",
+    "public/index.html": """<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -26,6 +56,8 @@
 </head>
 <body>
   <h1>Chiazam Iheme</h1>
-  <p>DevOps Engineer</p>
+  <p>I am a DevOps Engineer</p>
 </body>
 </html>
+"""
+}
